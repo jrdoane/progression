@@ -26,7 +26,7 @@ checking them against the predicate function. If this argument is nil, the input
 doesn't change.
 
 The second argument, ```true?``` is a Clojure function, in particular
-a predicate that returns true the value being passed to it is true. This
+a predicate that returns true if the value being passed to it is true. This
 predicate gets checked against the original state after it gets processed by the
 predicate transition function. If this argument is nil, the prior value being
 checked is only required to be distinct from the new value.
@@ -63,11 +63,10 @@ However, the following would return in a ```true``` value:
 
 ...and this would return the entire map for the new value:
 ```clojure
-(deft some-transition :enabled? true? false?)
+(deft some-transition :enabled? true? false? identity)
 (some-transition
   {:user-id 1 :enabled? true}
-  {:user-id 1 :enabled? false}
-  identity)
+  {:user-id 1 :enabled? false})
 ```
 
 Please note: Both the old and new values before and after the predicate
