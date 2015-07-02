@@ -5,6 +5,8 @@ to state changes. Progression doesn't manage state changes but, helps you
 determine how state changed. Progression's goal is to make defining those
 transitions an easier task with reusable facilities.
 
+[![Clojars Project](http://clojars.org/progression/latest-version.svg)](http://clojars.org/progression)
+
 ## Usage
 Progression currently has one simple function called ```(transition ...)```.
 This function returns non-nil values when both predicate functions are true for
