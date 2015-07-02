@@ -10,9 +10,11 @@ Progression currently has one simple function called ```(transition ...)```.
 This function returns non-nil values when both predicate functions are true for
 the output of the pred transition function.
 
-Take the following transition:
+Take the following transition (deft is just (def ... (transition ...))):
 ```clojure
 (deft some-transition :enabled? true? false? :user-id)
+;;; or
+(def some-transition (transition :enabled? true? false? :user-id))
 
 ```
 
